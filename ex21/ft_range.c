@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynaamane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 15:09:48 by ynaamane          #+#    #+#             */
-/*   Updated: 2018/11/07 15:19:27 by ynaamane         ###   ########.fr       */
+/*   Created: 2018/11/07 15:48:43 by ynaamane          #+#    #+#             */
+/*   Updated: 2018/11/07 15:54:07 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char str);
+#include <stdlib.h>
 
-void	ft_putstr(int *str)
+int		*ft_range(int min, int max)
 {
-	int i;
+	int				*tab;
+	int				counter;
+	unsigned int	diff;
 
-	i = 0;
-	while (str[i] != '\0')
+	diff = max - min;
+	tab = (int *)malloc(sizeof(int) * (diff));
+	counter = 0;
+	if (min >= max)
+		return (NULL);
+	while (min < max)
 	{
-		ft_putchar(str[i]);
-		i++;
+		tab[counter] = min;
+		min++;
+		counter++;
 	}
+	return (tab);
 }
-
-int	ft_strcmp(char *s1, char *s2)
-{
-	if (*s1 != *s2)
-		return (*s1 - *s2);
-	while (*s1 != *s2)
-	{
-		if (*s1 != *s2)
-			return(*s1 - *s2);
-		s1++;
-		s2++;
-	}
-	return (0);
-}
-
-int	main(argc, char **argv)
