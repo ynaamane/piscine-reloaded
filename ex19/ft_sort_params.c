@@ -38,4 +38,3 @@ int	ft_strcmp(char *s1, char *s2)
 	return (0);
 }
 
-int	main(argc, char **argv)
