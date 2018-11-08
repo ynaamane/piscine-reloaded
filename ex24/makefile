@@ -6,7 +6,7 @@
 #    By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 17:30:59 by ynaamane          #+#    #+#              #
-#    Updated: 2018/11/08 12:13:44 by ynaamane         ###   ########.fr        #
+#    Updated: 2018/11/08 12:45:47 by ynaamane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJ = ft_putchar.o ft_putstr.o ft_strcmp.o ft_strlen.o ft_swap.o
 all: $(NAME)
 
 $(NAME):
-		gcc $(CFLAG) $(OPTION) $(SRC)
+		gcc $(SRC)
 		ar rc $(NAME) $(OBJ)
 		ranlib $(NAME)
 clean:
