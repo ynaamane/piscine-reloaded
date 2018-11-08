@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ynaamane <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 11:15:22 by ynaamane          #+#    #+#             */
-/*   Updated: 2018/11/07 13:40:54 by ynaamane         ###   ########.fr       */
+/*   Updated: 2018/11/08 11:54:46 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ void	ft_putchar(char c);
 
 void	ft_is_negative(int n)
 {
-	if (n <= 0)
+	if (n >= 0)
 	{
 		ft_putchar(80);
 	}

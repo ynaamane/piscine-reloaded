@@ -1,17 +1,15 @@
 NAME = ft_display_file
+SRC = main.c
+FLAGS = -Wall -Wextra -Werror
 
-SRC = ft_display_file.c
+all :
+	gcc -c $(FLAGS) $(SRC)
+	gcc $(FLAGS) -o $(NAME) main.o
 
-all: $(NAME)
+clean :
+	rm -rf *.o
 
-$(NAME):
-	gcc -c -Wall -Werror -Wextra $(SRC)
-	gcc -o $(NAME) ft_display_file.o
+fclean : clean
+	rm -rf $(NAME)
 
-clean:
-	/bin/rm -f ft_display_file.o
-
-fclean: clean
-	/bin/rm -f $(NAME)
-
-re: fclean all
+re : fclean all
