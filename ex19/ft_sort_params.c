@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 15:09:48 by ynaamane          #+#    #+#             */
-/*   Updated: 2018/11/07 18:37:06 by ynaamane         ###   ########.fr       */
+/*   Updated: 2018/11/08 11:32:21 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,30 +38,36 @@ int		ft_strcmp(char *s1, char *s2)
 	return (0);
 }
 
-int		main(argc, char **argv)
+void	ft_swap(char **a, char **b)
 {
 	char	*tmp;
-	int		find;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+int		main(int argc, char **argv)
+{
 	int		i;
 
-	find = 1;
-	while (find)
+	i = 1;
+	while (i < argc - 1)
 	{
-		find = 0;
-		i = 0;
-		while (++i < argc - 1)
+		if (ft_strcmp(argv[i], argv[i + 1]) > 0)
 		{
-			if (ft_strcmp(argv[i], argv[i + 1]) > 0)
-			{
-				tmp = argv[i];
-				argv[i] = argv[i + 1];
-				argv[i + 1] = tmp;
-				find = 1;
-			}
+			ft_swap(&argv[i], &argv[i + 1]);
+			i = 1;
 		}
+		else
+			i++;
 	}
-	i = 0;
-	while (++i < argc)
-		ft_putstr(argv[i]), ft_putchar('\n');
+	i = 1;
+	while (i < argc)
+	{
+		ft_putstr(argv[i]);
+		ft_putchar('\n');
+		i++;
+	}
 	return (0);
 }
